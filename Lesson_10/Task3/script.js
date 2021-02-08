@@ -18,7 +18,9 @@ let f_3 = (arr) => {
 	xhr.open('POST', url);
 	xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
 	xhr.timeout = 10000;
-	xhr.send();
+	xhr.send(JSON.stringify({
+                                id: arr.id
+                            }));
 	xhr.onload = () => {
 		if (xhr.status != 200) {
 			 reject(alert(`Ошибка ${xhr.status}: ${xhr.statusText}`));
