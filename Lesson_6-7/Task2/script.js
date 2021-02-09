@@ -23,30 +23,33 @@ let container = document.getElementById('orderContainer');
 
 let table = document.createElement("TABLE");
 
-for (let index in orderList) {
-  let tr = document.createElement('tr');
-  for (let key in orderList[index]) {
-	  
-    let td = document.createElement('td');
-	
-    if (key === "name") {
-      let a = document.createElement('a');
-      a.innerHTML = orderList[index][key];
-      a.href = "3.html?ID=" + index;
-      a.style.color = 'black';
-      a.style.textDecoration = 'none';
-      td.append(a);
-      tr.append(td);
-    }
-    else {
-      td.innerHTML = orderList[index][key] + " ";
-      tr.append(td);
-    }
-  }
-  table.append(tr);
+if (container!=null){
+	for (let index in orderList) {
+	  let tr = document.createElement('tr');
+	  for (let key in orderList[index]) {
+		  
+		let td = document.createElement('td');
+		
+		if (key === "name") {
+		  let a = document.createElement('a');
+		  a.innerHTML = orderList[index][key];
+		  a.href = "3.html?ID=" + index;
+		  a.style.color = 'black';
+		  a.style.textDecoration = 'none';
+		  td.append(a);
+		  tr.append(td);
+		}
+		else {
+		  td.innerHTML = orderList[index][key] + " ";
+		  tr.append(td);
+		}
+	  }
+	  table.append(tr);
+	}
+	table.setAttribute("border", "2");
+
+	container.append(table);
 }
-table.setAttribute("border", "2")
-container.append(table);
 
 
 
