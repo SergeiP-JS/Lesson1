@@ -21,9 +21,8 @@ let {
 
 let container = document.getElementById('orderContainer');
 
-let table = document.createElement("TABLE");
-
 if (container!=null){
+	let table = document.createElement("TABLE");
 	for (let index in orderList) {
 	  let tr = document.createElement('tr');
 	  for (let key in orderList[index]) {
